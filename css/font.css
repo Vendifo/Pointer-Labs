@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Koho;
+    font-weight: 400;
+    font-style: normal;
+    src: local("Koho")
+             url("../assets/fonts/AnyConv.com__KoHo-Regular.woff2") format('woff2'),
+             url("../assets/fonts/AnyConv.com__KoHo-Regular.woff") format('woff'),
+             url("../assets/fonts/AnyConv.com__KoHo-Regular.eot") format('eot');
+}
+
+
+@font-face {
+    font-family: Kokoro;
+    font-weight: 400;
+    font-style: normal;
+    src: local("Kokoro")
+             url("../assets/fonts/AnyConv.com__Kokoro-Regular.woff2") format('woff2'),
+             url("../assets/fonts/AnyConv.com__Kokoro-Regular.woff") format('woff'),
+             url("../assets/fonts/AnyConv.com__Kokoro-Regular.eot") format('eot');
+}
