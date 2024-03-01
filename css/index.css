@@ -1,3 +1,9 @@
+:root { 
+    --main-blue : #0E2E57;
+    --sec-blue : #0085FF;
+    --hover-blue: #48a0f3;
+}
+
 body {
     background-color: #F1F1F1;
 }
@@ -5,13 +11,28 @@ body {
     main {
         margin-top: 60px;
         display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .wrapper { 
+        display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 60px;
+        padding: 0 160px;
+        max-width: 1200px;
+        transition: transform 0.3s ease;
+        transition-delay: 0.1s;
+        
+    }
+
+    .wrapper.active { 
+        transform: translateX(100px);
     }
 
     .title {
-        font-family: "Koho";
+        font-family: "KoHo Bold";
         font-size: 30px;
         color: #0E2E57;
         text-transform: uppercase;
@@ -19,16 +40,13 @@ body {
         
     }
 
-    .section {
-        margin:0 160px;
-        
-    }
+    
     
 }
 
 @media screen and (max-width:710px) {
     main {
-        margin: 95px 20px 0 20px;
+        margin: 95px 0px 0 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -36,36 +54,50 @@ body {
         
     }
 
+    .wrapper { 
+        
+        font-family: "KoHo Regular";
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     .title {
-        font-family: "Koho";
+        font-family: "KoHo Regular";
         font-size: 30px;
         color: #0E2E57;
         text-transform: uppercase;
         margin-bottom: 30px;
+        text-align: center;
         
     }
 
-    .section {
-        margin: 0 20px;
+    .container { 
+        overflow: hidden;
+        margin: 0px 20px 0 20px;
     }
+
+   
 }
 
 
-@media screen and (min-width:710px) {
+@media screen and (min-width:1000px) {
     .about__content {
         display: flex;
         justify-content: space-between;
+        gap: 60px;
     }
     
     .about__text-container {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        margin-right: 60px;
-        font-family: "Kokoro";
-        font-size: 20px;
-        text-transform: uppercase;
-        max-width: 400px;
+        
+        max-width: 470px;
+        font-size: 18px;
+        width: 100%;
+       
+        font-family: "KoHo Regular";
     }
     
     .about__img-container {
@@ -91,7 +123,7 @@ body {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        font-family: "Kokoro";
+        font-family: "KoHo Regular";
         font-size: 20px;
         text-transform: uppercase;
         width: 100%;
@@ -107,7 +139,736 @@ body {
     }
 }
 
+@media screen and (min-width:710px) {
+    .serv__list { 
+        display: flex;
+        justify-content: space-between;
+        font-family: "KoHo Regular";
+        gap: 10px;
+    }
 
+    .serv__card { 
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #000000;
+        padding: 15px;
+        min-width: 240px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .serv__card__title { 
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-family: 'KoHo Bold';
+        width: 100%;
+    }
+
+    .serv__card__name { 
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    .serv__card__price { 
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .serv__card__disc { 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 65px;
+    }
+
+    .serv__card__disc__point { 
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .serv__card__text { 
+        font-size: 10px;
+        text-transform: uppercase;
+        max-width: 180px;
+        
+    }
+
+    .serv__card__btn { 
+        background-color: var(--main-blue);
+        border-radius: 50px;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+        min-width: 100px;
+        padding: 5px 0px;
+        margin-left: auto;
+        transition: background-color 0.3s ease;
+    }
+    
+    .serv__card__btn:hover { 
+        background-color: #0085FF;
+    }
+
+    .service__more { 
+        font-family: "KoHo Regular";
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .service__more button{ 
+        text-decoration: underline;
+        margin-left: auto;
+        padding: 2px;
+        
+    }
+
+    .service__more button:hover { 
+        color: var(--main-blue);
+    }
+}
+
+@media screen and (max-width:709px) {
+    .service__container { 
+        overflow: visible;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .service__title { 
+        padding-left: 20px;
+    }
+
+    .serv__list { 
+        display: flex;
+        font-family: "KoHo Regular";
+
+        
+    }
+
+    .serv__list .slick-track { 
+        display: flex;
+        gap: 25px;
+        padding: 10px 0px;
+        
+    }
+
+    .serv__list .slick-slide { 
+        scale: 0.9;
+        filter: blur(2px);
+        transition: all 0.3s ease;
+    }
+
+    .serv__list .slick-slide.slick-active.slick-center { 
+        scale: 1;
+        filter: none;
+    }
+
+    .serv__card { 
+        border-radius: 20px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px #000000;
+        padding: 15px 20px;
+        min-width: 218px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .serv__card__title { 
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-family: 'KoHo Bold';
+        width: 100%;
+    }
+
+    .serv__card__name { 
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    .serv__card__price { 
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+
+    .serv__card__disc { 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .serv__card__disc__point { 
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .serv__card__text { 
+        font-size: 11px;
+        text-transform: uppercase;
+        
+        
+    }
+
+    .serv__card__btn__cont { 
+        display: flex;
+        
+    }
+
+    .serv__card__btn { 
+        background-color: var(--main-blue);
+        border-radius: 50px;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+        min-width: 100px;
+        padding: 5px 0px;
+        margin-left: auto;
+        transition: background-color 0.3s ease;
+        margin: 0 auto;
+    }
+    
+    .serv__card__btn:hover { 
+        background-color: #0085FF;
+    }
+
+    .service__more { 
+        font-family: "KoHo Regular";
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+
+    .service__more button{ 
+        background-color: var(--main-blue);
+        color: #fff;
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 5px 10px;
+        
+    }
+
+    .service__more button:hover { 
+        color: var(--main-blue);
+    }
+}
+
+@media screen and (min-width: 710px) {
+    .gallery__content { 
+        margin-top: 40px;
+        display: flex;
+        padding: 0px 40px 0px 0px;
+    }
+
+    .gallery__point, .gallery__slider { 
+        width: 100%;
+    }
+
+    .gallery__item { 
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        font-family: "KoHo Regular";
+    }
+
+    .gallery__check { 
+        font-family: "KoHo Bold";
+        font-size: 30px;
+        color: var(--main-blue);
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .gallery__item__title { 
+        font-size: 20px;
+        margin-top: 6px;
+    }
+
+    .gallery__item__disc { 
+        display: none;
+        font-size: 17px;
+    }
+
+    .gallery__slider__container { 
+        min-height: 298px;
+    }
+
+    .gallery__slider.active { 
+        display: block;
+        height: 100%;
+        width: 362px;
+    } 
+
+    .gallery__slider:not(.active) {
+        display: none !important;
+    }
+
+    .gallery__slider .slick-arrow::before { 
+        color: var(--main-blue);
+        font-size: 30px;
+    }
+
+    .gallery__slider .slick-arrow.slick-prev { 
+        left: -5px;
+        z-index: 100;
+    }
+
+    .gallery__slider .slick-arrow.slick-next { 
+        right: 5px;
+        z-index: 100;
+
+    }
+}
+
+@media screen and (max-width: 709px) {
+    .gallery__container { 
+        overflow: visible;
+    }
+
+    .gallery__content { 
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 0px 40px 0px 0px;
+    }
+
+    .gallery__point, .gallery__slider { 
+        width: 100%;
+    }
+
+    .gallery__item { 
+        cursor: pointer;
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        font-family: "KoHo Regular";
+    }
+
+    .gallery__check { 
+        font-family: "KoHo Bold";
+        font-size: 30px;
+        color: var(--main-blue);
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .gallery__item__title { 
+        font-size: 15px;
+        margin-top: 6px;
+    }
+
+    .gallery__item__disc { 
+        display: none;
+        font-size: 13px;
+    }
+
+    .gallery__slider__container { 
+        min-height: 300px;
+    }
+
+    .gallery__slider.active { 
+        display: block;
+        height: 100%;
+        width: 362px;
+    } 
+
+    .gallery__slider:not(.active) {
+        display: none !important;
+    }
+
+    .gallery__slider .slick-arrow::before { 
+        color: var(--main-blue);
+        font-size: 30px;
+    }
+
+    .gallery__slider .slick-arrow.slick-prev { 
+        left: -5px;
+        z-index: 100;
+    }
+
+    .gallery__slider .slick-arrow.slick-next { 
+        right: 5px;
+        z-index: 100;
+
+    }
+}
+
+@media screen and (min-width:710px) {
+    .benefits__list { 
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 140px;
+        font-family: "KoHo Regular";
+    }
+
+    .benefits__item { 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .benefits__title { 
+        position: relative;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .benefits__title::before { 
+        position: absolute;
+        content: "";
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--main-blue);
+    }
+}
+
+@media screen and (max-width:709px) {
+    .benefits__list { 
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+
+        gap: 35px;
+        font-family: "KoHo Regular";
+    }
+
+    .benefits__item { 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .benefits__title { 
+        position: relative;
+        font-size: 15px;
+        font-family: "KoHo Bold";
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .benefits__title::before { 
+        position: absolute;
+        content: "";
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--main-blue);
+    }
+
+    .benefits__disc { 
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:710px) {
+    .contact__form { 
+        background-image: url('../assets/img/contact__back.svg');
+        background-size: cover;
+        border-radius: 25px;
+        display: flex;
+        padding: 15px 40px 25px 10px;
+    }
+
+    .contact__cont { 
+        margin-left: auto;
+        color: #fff;
+        font-family: "KoHo Regular";
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__cont h3 { 
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .contact__subtitle { 
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .contact__input { 
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 2px rgba(0,0,0,.5);
+        padding: 10px;
+        min-width: 270px;
+        margin-bottom: 10px;
+    }
+
+    input::placeholder {
+        color: white; 
+    }
+
+    .contact__btn { 
+        margin-left: auto;
+    }
+
+    .contact__btn button { 
+        border: 1px solid #fff;
+        border-radius: 10px 0px 10px 0px;
+        font-family: "KoHo Bold";
+        padding: 5px 20px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #fff;
+        background-color: transparent;
+        z-index: 2;
+    }
+
+    .contact__btn button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: var(--hover-blue);
+        box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+        z-index: -1;
+        border-radius: 50%;
+        transition: all 0.4s ease;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+    
+    .contact__btn button:hover::before {
+        width: 300px;
+        height: 300px;
+        top: 0px;
+        left: 0px;
+    }
+}
+
+@media screen and (max-width:709px) {
+    .contact__form { 
+        background-image: url('../assets/img/contact__back__mob.svg');
+        background-size: cover;
+        border-radius: 25px;
+        display: flex;
+        padding: 15px 40px 25px 10px;
+    }
+
+    .contact__cont { 
+        margin-left: auto;
+        color: #fff;
+        font-family: "KoHo Regular";
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact__cont h3 { 
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .contact__subtitle { 
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .contact__input { 
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        box-shadow: 0px 0px 2px rgba(0,0,0,.5);
+        padding: 10px;
+        min-width: 270px;
+        margin-bottom: 10px;
+    }
+
+    input::placeholder {
+        color: white; 
+    }
+
+    .contact__btn { 
+        margin-left: auto;
+    }
+
+    .contact__btn button { 
+        border: 1px solid #fff;
+        border-radius: 10px 0px 10px 0px;
+        font-family: "KoHo Bold";
+        padding: 5px 20px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #fff;
+        background-color: transparent;
+        z-index: 2;
+    }
+}
+
+@media screen and (min-width: 710px) {
+    .footer { 
+        width: 100%;
+        height: 265px;
+    
+        background-color: #212121;
+    }
+
+    .footer__container { 
+        height: 100%;
+        width: 100%;
+        padding: 57px 73px 0px 120px;
+        margin-bottom: 37px;
+        font-family: "KoHo Regular";
+        color: #fff;
+        display: flex;
+        gap: 95px;
+    }
+
+    
+
+    .footer__disc { 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 17px 4px;
+        width: 100%;
+    }
+
+    .footer__disc__number { 
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer__disc__number__int { 
+        text-decoration: underline;
+    }
+
+    .footer__disc__text { 
+        max-width: 262px;
+    }
+
+    .footer__disc__text, .footer__disc__right { 
+        font-size: 15px;
+    }
+
+    .footer__links { 
+        font-family: "KoHo Regular";
+        display: flex;
+        width: 60%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer__links__site { 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px 0px 20px 0px;
+    }
+
+    .footer__links__item { 
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 709px) {
+    .footer { 
+        width: 100%;
+        overflow: hidden;
+    
+        background-color: #212121;
+    }
+
+    .footer__container { 
+        height: 100%;
+        
+        padding: 25px 41px 0px 41px;
+        overflow: hidden;
+        font-family: "KoHo Regular";
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 95px;
+    }
+
+    
+
+    .footer__disc { 
+        display: flex;
+
+        justify-content: center;
+        text-align: center;
+        flex-direction: column-reverse;
+        gap: 17px 4px;
+        width: 100%;
+    }
+
+    .footer__disc__number { 
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer__disc__number__int { 
+        text-decoration: underline;
+    }
+
+    .footer__disc__text { 
+        max-width: 262px;
+    }
+
+    .footer__disc__text, .footer__disc__right { 
+        font-size: 15px;
+    }
+
+    .footer__links { 
+        font-family: "KoHo Regular";
+        display: flex;
+        width:100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer__links__site { 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 17px;
+        padding: 0px 0px 20px 0px;
+    }
+
+    .footer__links__item { 
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        font-size: 20px;
+    }
+}
 
 
 
